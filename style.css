@@ -1,0 +1,190 @@
+:root{
+    --fw-I: 500;
+    --fw-II: 700;
+    --fw-III: 800;
+
+    --fs-I: 1rem;
+    --fs-II: 1.5rem;
+    --fs-III: 2rem;
+    --fs-IV: 2.5rem;
+    --fs-V: 5rem;
+    --fs-pera: 18px;
+
+    --clr-black: 0,0%,0%;
+    --clr-bg: 221, 100%, 96%;
+    --clr-font: 241, 100%, 89%;
+    --clr-white: 0, 0%, 100%;
+    --Dark-gray-blue: 224, 30%, 27%;
+    --clr-item1: 0, 100%, 50%;
+    --clr-item2: 50, 100%, 50%;
+    --clr-item3: 120, 100%, 50%;
+    --clr-item4: 240, 100%, 50%;
+
+    --fontF: 'Hanken Grotesk';
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--fontF);
+}
+
+html{
+    font-size: 18px;
+}
+
+.main{
+    --border-redius: 5%;
+    --padding: 1.7rem;
+    height: 100%;
+    width: 100%;
+    background-color: hsl(var(--clr-white));
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    overflow: hidden;
+}
+
+@media (min-width:600px){
+    body{
+        /* overflow: hidden auto; */    
+        background-color: hsl(var(--clr-bg));
+        min-height: 100vh;
+        display: grid;  
+        place-items: center;
+    }
+
+    .main{
+        height: auto;
+        width: 40vw;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: 1fr;
+        border-radius: var(--border-redius);
+        box-shadow: 10px 10px 20px 1px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.main .section1{
+    height: auto;
+    background-color: hsl(var(--clr-item4));
+    color: hsl(var(--clr-font));
+    display: grid;
+    align-content: start;
+    gap: 5%;
+    border-radius: 0px 0px var(--border-redius) var(--border-redius);
+    text-align: center;
+    padding: var(--padding);
+}
+
+@media (min-width: 600px){
+    .main .section1{
+        height: 100%;
+        border-radius: var(--border-redius);
+    }
+}
+
+.main .sec-heading{
+    font-size: var(--fs-I);
+}
+
+.main .section1 .score{
+    --linear-greadient: linear-gradient(to bottom, hsla(200, 100%, 10%,0.3), hsla(170,30%,27%,0.1));
+    height: 7rem;
+    width: 7rem;
+    display: grid;
+    place-content: center;
+    border-radius: 50%;
+    /* background-color: var(--to-start); */
+    background: var(--linear-greadient);
+    margin: 0.5rem auto;
+}
+
+.main .section1 .score span{
+    font-size: 3rem;
+    color: hsl(var(--clr-white));
+    font-weight: var(--fw-III);
+}
+
+.main .section1 .peraBox h4{
+    color: hsl(var(--clr-white));
+    font-size: 1.3rem;
+    font-weight: var(--fw-II);
+}
+
+.main .section1 .peraBox p{
+    font-size: 0.8rem;
+    margin: .5rem 0;
+}
+
+.main .section2{
+    padding: var(--padding);
+    display: grid;
+    align-content: start;
+    gap: 1.5rem;
+}
+
+.main .section2 .score-boxs{
+    display: grid;
+    gap: 0.5rem;
+}
+
+.main .section2 .score-boxs .score-box1{
+    --bgcolor: var(--clr-item1);
+}
+
+.main .section2 .score-boxs .score-box2{
+    --bgcolor: var(--clr-item2);
+}
+
+.main .section2 .score-boxs .score-box3{
+    --bgcolor: var(--clr-item3);
+}
+
+.main .section2 .score-boxs .score-box4{
+    --bgcolor: var(--clr-item4);
+}
+
+.main .section2 .score-boxs .score-box{
+    /* border: 2px solid hsla(var(--bgcolor),0.5); */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 0.8rem;
+    font-size: 0.8rem;
+    /* margin: 0.6rem 0; */
+    border-radius: 7px;
+    background-color: hsla(var(--bgcolor),0.1);
+    color: hsla(var(--clr-black),0.7)
+}
+
+.main .section2 .score-boxs .score-box .inner-score span{
+    color: hsl(--clr-black);
+    font-weight: var(--fw-III);
+}
+
+.main .section2 .score-boxs .score-box .textBox{
+    color: hsl(var(--bgcolor));
+    display: flex;
+    gap: 0.3rem;
+    align-items: center;
+}
+
+.main .section2 .score-boxs .score-box .textBox svg{
+    height: 0.8rem;
+    width: 0.8rem;
+}
+
+.main .section2 .btn{
+    padding: 0.5rem 0;
+    border: none;
+    border-radius: 20px;
+    background-color: hsl(var(--Dark-gray-blue));
+    font-size: calc(var(--fs-I) - 2px);
+    color: hsl(var(--clr-white));
+    font-weight: var(--fw-II);
+} 
+
+.main .section2 .btn:hover{
+    background-color: hsl(var(--clr-item4));
+    opacity: 0.8;
+}
